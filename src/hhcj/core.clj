@@ -1,6 +1,5 @@
 (ns hhcj.core)
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(defn fuzzy= [tor x y]
+  (let [diff (Math/abs (- x y))]
+    (< diff tor)))

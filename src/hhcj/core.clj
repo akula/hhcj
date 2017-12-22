@@ -17,6 +17,12 @@
     (io/copy reader response)
     (str response)))
 
-(send-request "www.baidu.com"  80 "/index.html")
+(def a-z (vec (map char (range 97 123))))
+(def A-Z (vec (map char (range 65 91))))
+(def digests (vec (map char (range 48 58))))
 
+(reduce into [digests a-z A-Z])
+(defn rand-str
+  [n]
+  (apply str (repeatedly n #(.charAt "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ" (rand-int 36)))))
 
